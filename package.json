@@ -4,7 +4,8 @@
   "description": "coding challenge test for BCG DV",
   "main": "app.ts",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "node -r ts-node/register src/app.ts"
   },
   "keywords": [
     "bcg",
