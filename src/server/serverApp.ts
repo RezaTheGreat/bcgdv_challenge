@@ -9,7 +9,5 @@ app.use(bodyParser());
 app.use(handleRequest);
 
 export function startServer() {
-  return app.listen(serverPort, () => {
-    console.info(`server started on port ${serverPort}`);
-  });
+  return app.listen(serverPort);
 }

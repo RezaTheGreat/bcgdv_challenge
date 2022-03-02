@@ -1,7 +1,13 @@
 import request from 'supertest';
-import { app } from './serverApp';
+import { app, startServer } from './serverApp';
 
-describe('testing the server for correct response', () => {
+describe('testing the server for correct behavior', () => {
+  it('should get up and running', () => {
+    const mockListen = jest.fn();
+    app.listen = mockListen;
+    startServer();
+    expect(mockListen).toBeCalledTimes(1);
+  });
   it('should return the correct price from the server', async () => {
     const response = await request(app.callback())
       .post('/')
